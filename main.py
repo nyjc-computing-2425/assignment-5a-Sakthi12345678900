@@ -22,4 +22,16 @@ def to_hms(seconds: int) -> list:
     """
     # Type your code below
     pass
+    valid = True 
+    if not isinstance(seconds, int):
+        valid = False 
+    else:
+        minutes, seconds = divmod(seconds, 60)
+        hours, minutes = divmod(minutes, 60)
+
+        hms_lst = [hours, minutes, seconds]
+        return hms_lst
+
+    if not valid:
+        print('Unsupported input type.')
 
